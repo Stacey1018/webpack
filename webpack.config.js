@@ -8,17 +8,11 @@ module.exports = {
   mode: 'development',
   entry: {
     index:'./src/index.js',
-    ccmodule:'./src/ccmodule.js'
-
   },
   output: {
     filename: '[name].bundle.js',
+    chunkFilename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
-  optimization:{
-    splitChunks:{
-      chunks: 'all'
-    }
-  }
  
 };
