@@ -5,16 +5,20 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
-  mode: 'production',
-  entry: './src/index.js',
+  mode: 'development',
+  entry: {
+    index:'./src/index.js',
+    ccmodule:'./src/ccmodule.js'
+
+  },
   output: {
-    filename: 'main.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
-  optimization: {
-    providedExports:true,
-    usedExports: true
-  },
-
+  optimization:{
+    splitChunks:{
+      chunks: 'all'
+    }
+  }
  
 };
