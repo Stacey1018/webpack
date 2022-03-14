@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "learn webpack ",
   "main": "index.js",
+  "sideEffects": false,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch",
-    "start": "webpack-dev-server --open",
+    "start": "webpack-dev-server --open --config webpack.dev.js",
     "server": "node server.js",
     "dev-server": "node dev-server.js",
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.prod.js"
   },
   "author": "",
   "license": "ISC",
@@ -23,7 +24,8 @@
     "webpack": "^4.46.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-middleware": "^5.3.1",
-    "webpack-dev-server": "^4.7.4"
+    "webpack-dev-server": "^4.7.4",
+    "webpack-merge": "^5.8.0"
   },
   "dependencies": {
     "lodash": "^4.17.21"
